@@ -1,5 +1,6 @@
 ﻿using ExcelDataReader;
 using KPI.Filtering.Web.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Xml;
 
 namespace KPI.Filtering.Web.Controllers
 {
+    [EnableCors("_allowAll")]
     [Route("api/[controller]")]
     [ApiController]
     public class KPIFilterController : ControllerBase
