@@ -1,0 +1,56 @@
+{
+  "name": "Refill",
+  "constraints": [
+    {
+	  "operation": "AND",
+      "attribute": "Date",
+      "comparator": "gt",
+      "operand": "1-Jan"
+    },
+    {
+	  "operation": "AND",
+      "attribute": "Date",
+      "comparator": "lt",
+      "operand": "2-Jan"
+    },
+    {
+	  "operation": "AND",
+      "attribute": "Region",
+      "comparator": "eq",
+      "operand": "DHK"
+    },
+    {
+	  "operation": "AND",
+      "attribute": "Refill",
+      "comparator": "lte",
+      "operand": "20"
+    }
+  ],
+  "joinDetails": {
+    "on": "SUBSCRIBER_ID",
+	"operation": "AND",
+	"joinDataSource": {
+	  "name": "Service",
+	  "constraints": [
+	    {
+		  "operation": "AND",
+          "attribute": "Date",
+          "comparator": "gt",
+          "operand": "6-Jan"
+		},
+	    {
+		  "operation": "AND",
+          "attribute": "Date",
+          "comparator": "lt",
+          "operand": "7-Jan"
+		},
+	    {
+		  "operation": "AND",
+          "attribute": "Service",
+          "comparator": "eq",
+          "operand": "Data Pack"
+		}
+	  ]
+	}
+  }
+}

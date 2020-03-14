@@ -1,0 +1,45 @@
+<ds name="Refill">
+	<constraints>
+		<and>
+			<attribute name="Date" />
+			<comparator name="gt" />
+			<operand value="1-Jan" />
+		</and>
+		<and>
+			<attribute name="Date" />
+			<comparator name="lt" />
+			<operand value="2-Jan" />
+		</and>
+		<and>
+			<attribute name="Region" />
+			<comparator name="eq" />
+			<operand value="DHK" />
+		</and>
+		<and>
+			<attribute name="Refill" />
+			<comparator name="lte" />
+			<operand value="20" />
+		</and>
+	</constraints>
+	<join on="SUBSCRIBER_ID" operation="AND">
+		<ds name="Service">
+			<constraints>
+				<and>
+					<attribute name="Date" />
+					<comparator name="gt" />
+					<operand value="6-Jan" />
+				</and>
+				<and>
+					<attribute name="Date" />
+					<comparator name="lt" />
+					<operand value="7-Jan" />
+				</and>
+				<and>
+					<attribute name="Service" />
+					<comparator name="eq" />
+					<operand value="Data Pack" />
+				</and>
+			</constraints>
+		</ds>
+	</join>
+</ds>

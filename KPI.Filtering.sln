@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPI.Filtering.POC", "KPI.Filtering.POC\KPI.Filtering.POC.csproj", "{EB73B98F-2AA0-4AE3-9BEF-0BE3AE1D08E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPI.Filtering.Web", "KPI.Filtering.Web\KPI.Filtering.Web.csproj", "{9A9973FF-3113-4027-8D5A-0A1C18D5FD75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB73B98F-2AA0-4AE3-9BEF-0BE3AE1D08E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB73B98F-2AA0-4AE3-9BEF-0BE3AE1D08E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB73B98F-2AA0-4AE3-9BEF-0BE3AE1D08E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB73B98F-2AA0-4AE3-9BEF-0BE3AE1D08E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9973FF-3113-4027-8D5A-0A1C18D5FD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9973FF-3113-4027-8D5A-0A1C18D5FD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9973FF-3113-4027-8D5A-0A1C18D5FD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9973FF-3113-4027-8D5A-0A1C18D5FD75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25B69E2E-C8AF-4CE2-8A67-FE99BEF91C8D}
+	EndGlobalSection
+EndGlobal
