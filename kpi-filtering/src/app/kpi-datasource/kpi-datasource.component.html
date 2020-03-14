@@ -1,0 +1,40 @@
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label">KPI</label>
+  <div class="col-sm-10">
+    <ngx-select-dropdown (change)="selectionChanged($event)" [multiple]="false" 
+                         [(ngModel)]="kpiSelectModel" [config]="selectConfig" [options]="kpiDatasources">
+    </ngx-select-dropdown>
+  </div>
+</div>
+<div *ngFor="let condition of conditions" class="form-group row">
+  <div class="col-sm-2">
+    <ngx-select-dropdown [multiple]="false" [(ngModel)]="condition.operation" 
+                         [config]="selectConfig" [options]="filterJoinOptions">
+    </ngx-select-dropdown>
+  </div>
+  <div class="col-sm-2">
+    <ngx-select-dropdown [multiple]="false" [(ngModel)]="condition.attribute" 
+                         [config]="selectConfig" [options]="kpiAttributes">
+    </ngx-select-dropdown>
+  </div>
+  <div class="col-sm-2">
+    <ngx-select-dropdown [multiple]="false" [(ngModel)]="condition.comparator" 
+                         [config]="selectConfig" [options]="filterComparisons">
+    </ngx-select-dropdown>
+  </div>
+  <div class="col-sm-2">
+    <input type="text" class="form-control" [(ngModel)]="condition.operand1" >
+  </div>
+  <div class="col-sm-2">
+    <input type="text" class="form-control" [(ngModel)]="condition.operand2" >
+  </div>
+  <div class="col-sm-2">
+    <button type="button" class="form-control text-danger" 
+            style="padding: 0; border: none; background: none;"
+            (click)="deleteCondition(condition)">
+      <i class="fa fa-trash-o"></i>
+    </button>
+  </div>
+</div>
+<button type="button" class="btn btn-link float-right" (click)="addAnotherCondition()">Add another condition</button>
+  
