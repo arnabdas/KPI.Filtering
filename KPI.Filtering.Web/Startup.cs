@@ -20,7 +20,7 @@ namespace KPI.Filtering.Web
             Configuration = configuration;
         }
 
-        //readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        readonly string AllowAll = "_allowAll";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -38,7 +38,12 @@ namespace KPI.Filtering.Web
                 });
             */
             services
-                .AddCors()
+                .AddCors(o => o.AddPolicy(AllowAll, builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                }))
                 .AddMvc()
                 .AddXmlSerializerFormatters()
                 .AddXmlDataContractSerializerFormatters()
@@ -54,7 +59,7 @@ namespace KPI.Filtering.Web
             }
 
             // app.UseCors(MyAllowSpecificOrigins); 
-            app.UseCors();
+            app.UseCors(AllowAll);
             app.UseMvc();
         }
     }
