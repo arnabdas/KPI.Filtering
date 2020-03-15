@@ -24,7 +24,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <app-kpi-datasource></app-kpi-datasource>
+          <app-kpi-datasource [kpiDatasourcesList]="kpiDatasources" [position]="kpi.key"></app-kpi-datasource>
         </div>
       </div>
     </div>
@@ -32,6 +32,6 @@
 </div>
 
 <div class="footer">
-  <button type="button" class="btn btn-link float-left" (click)="addKPI()">Add KPI to filter</button>
+  <button type="button" class="btn btn-link float-left" (click)="addKPI()" [disabled]="!(kpiDatasources && kpiDatasources.length > 0)">Add KPI to filter</button>
   <button type="button" class="btn btn-primary float-right" (click)="export()">Export</button>
 </div>
