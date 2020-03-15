@@ -2,6 +2,18 @@
   {{title}}
 </h1>
 
+<div class="row">
+  <div class="offset-lg-1 col-lg-10">
+    
+    <form class="form-inline">
+      <div class="form-group mb-2">
+        <input type="file" (change)="selectedKPISourcesExcel($event)" placeholder="Select Excel" accept=".xlsx">
+      </div>
+      <button type="button" (click)="uploadKPIExcel()" class="btn btn-primary mb-2">Upload</button>
+    </form>
+  </div>
+</div>
+
 <div class="row" *ngFor="let kpi of filterKPIs">
   <div class="offset-lg-1 col-lg-10">
     <div class="kpi-datasource-outer border border-primary rounded">

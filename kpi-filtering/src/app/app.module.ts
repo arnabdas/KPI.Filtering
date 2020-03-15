@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 
@@ -17,7 +18,8 @@ import { KpiDatasourceComponent } from './kpi-datasource/kpi-datasource.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    SelectDropDownModule
+    SelectDropDownModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
