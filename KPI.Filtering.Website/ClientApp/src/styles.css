@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+.kpi-datasource-outer {
+  padding: 3em;
+  margin-bottom: 2em;
+}
+
+.kpi-close {
+  right: 1em;
+  position: absolute;
+  top: .25em;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightgray;
+  text-align: center;
+  padding: .75em 1em;
+}
