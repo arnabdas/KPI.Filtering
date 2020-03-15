@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.Formatters.Xml;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace KPI.Filtering.Web
 {
@@ -21,7 +22,6 @@ namespace KPI.Filtering.Web
             Configuration = configuration;
         }
 
-        readonly string AllowAll = "_allowAll";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -44,6 +44,12 @@ namespace KPI.Filtering.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
+            app.UsePathBase("/api");
             app.UseCors(b => b.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseMvc();
         }

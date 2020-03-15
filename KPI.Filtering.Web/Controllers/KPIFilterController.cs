@@ -11,7 +11,7 @@ using System.Xml;
 
 namespace KPI.Filtering.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class KPIFilterController : ControllerBase
     {
