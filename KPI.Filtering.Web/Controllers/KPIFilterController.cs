@@ -11,7 +11,6 @@ using System.Xml;
 
 namespace KPI.Filtering.Web.Controllers
 {
-    [EnableCors("_allowAll")]
     [Route("api/[controller]")]
     [ApiController]
     public class KPIFilterController : ControllerBase
